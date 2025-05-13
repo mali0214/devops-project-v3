@@ -38,4 +38,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
 USER appuser
 
 # Run the application
-CMD ["python", "app.py"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+
