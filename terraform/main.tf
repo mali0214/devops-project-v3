@@ -23,7 +23,7 @@ module "ec2" {
   instance_type          = "t2.micro"
   subnet_id              = module.vpc.public_subnet_ids[0]
   vpc_security_group_ids = [module.security_group.security_group_id]  # Update this line
-  key_name               = "my-devops-key"
+  key_name               = "devops-access-key"
   iam_instance_profile   = module.iam.instance_profile_name
 }
 

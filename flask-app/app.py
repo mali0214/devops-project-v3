@@ -13,8 +13,12 @@ def another_route():
 @app.route('/some-post-endpoint', methods=['POST'])
 def post_endpoint():
     data = request.get_json()
-    # You can handle the data here if needed
     return jsonify({"message": "Success"}), 200
+
+# Health check route
+@app.route('/health')
+def health():
+    return jsonify({"status": "healthy"}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
